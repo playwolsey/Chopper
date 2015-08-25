@@ -10,5 +10,5 @@ title: Chopper
 #]]
 
 [[##script:
-<script src="app.js"></script>
+<script src="build/index.js"></script>
 #]]
