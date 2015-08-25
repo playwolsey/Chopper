@@ -36,7 +36,7 @@ var config = {
         noParse: [pathToReact]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+        new webpack.optimize.CommonsChunkPlugin('vendors', '/public/vendors.js')
     ]
 };
 

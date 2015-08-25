@@ -27,11 +27,11 @@
         "style-loader": "^0.12.3",
         "url-loader": "^0.5.6",
         "nodemon": "^1.2.1",
+        "webpack-dev-server": "^1.10.1",
         "webpack": "^1.10.1"
     },
     "dependencies": {
         "react": "^0.13.3",
-        "webpack-dev-server": "^1.10.1",
         "express": "4.13.1",
         "express.io": "1.1.13",
         "express-dot-engine": "~1.0.7",
