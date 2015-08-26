@@ -1,10 +1,10 @@
 import '../../css/common/reset.less';
 import React from 'react';
-import Hello from '../../components/hello/component.jsx';
+import Navbar from '../../components/navbar/navbar.jsx';
 
 ;(function() {
     React.render(
-        <Hello />,
+        <Navbar />,
         document.getElementById('app')
     );
 })();

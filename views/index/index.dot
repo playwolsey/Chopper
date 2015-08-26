@@ -5,10 +5,12 @@ title: Chopper
 
 [[##wrapper:
 <section id="app">
-    <p>[[= model.message]]</p>
 </section>
+
+[[= model.message]]
 #]]
 
 [[##script:
-<script src="build/index.js"></script>
+<script src="/build/vendors.js"></script>
+<script src="/build/index.bundle.js"></script>
 #]]

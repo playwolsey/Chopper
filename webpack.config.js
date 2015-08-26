@@ -15,8 +15,8 @@ var config = {
         }
     },
     output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: '[name].js'
+        path: path.resolve(__dirname, 'public/build'),
+        filename: '[name].bundle.js'
     },
     module: {
         loaders: [{
