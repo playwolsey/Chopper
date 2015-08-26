@@ -1,4 +1,4 @@
-var express = require('express');
+import express from 'express';
 var engine = require('express-dot-engine');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -6,7 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/routes');
-var config = require('./config/config.db');
+var config = require('./config/db.config');
 
 var app = express();
 var http = require('http').Server(app);
