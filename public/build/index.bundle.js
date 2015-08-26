@@ -372,11 +372,7 @@ webpackJsonp([0],[
 	                { className: "title" },
 	                '12345'
 	            ),
-	            _react2['default'].createElement(
-	                'span',
-	                { className: "nav" },
-	                '666'
-	            ),
+	            _react2['default'].createElement('span', { className: "nav" }),
 	            _react2['default'].createElement(
 	                'p',
 	                null,

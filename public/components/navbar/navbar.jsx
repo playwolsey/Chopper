@@ -6,7 +6,7 @@ var Navbar = React.createClass({
         return (
             <header className="navbar">
                 <span className="title">12345</span>
-                <span className="nav">666</span>
+                <span className="nav">777</span>
                 <p>xxxx</p>
             </header>
         )
