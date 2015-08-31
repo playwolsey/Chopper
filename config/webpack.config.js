@@ -16,7 +16,8 @@ var config = {
     },
     output: {
         path: path.resolve(__dirname, 'public/build'),
-        filename: '[name].bundle.js'
+        filename: '[name].bundle.js',
+        publicPath: 'http://localhost:2998/js/'
     },
     module: {
         loaders: [{
