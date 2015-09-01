@@ -51,7 +51,7 @@ APP.use((err, req, res, next) => {
 
 APP.set('port', process.env.PORT || 2998);
 
-let server = http.listen(app.get('port'), () => {
+const server = http.listen(app.get('port'), () => {
     console.log('Chopper server is listening on port ' + server.address().port);
 });
 

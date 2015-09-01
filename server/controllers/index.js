@@ -4,11 +4,19 @@
  * @createTime 2015-08-26
  */
 
-//var JSX = require('node-jsx').install(),
-var index = function(req, res) {
-    res.render('index/index', {
-        message: 'from server'
-    });
-}; 
 
-exports.index = index;
+
+import jsx = from 'node-jsx';
+import React from 'react';
+
+const JSX = jsx.install();
+//TweetsApp = require('./components/TweetsApp.react'),
+//Tweet = require('./models/Tweet');
+
+export {
+    index(req, res) => {
+        res.render('index/index', {
+            message: 'from server'
+        });
+    }
+};
