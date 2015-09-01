@@ -4,10 +4,7 @@
     "description": "webpack react Node.js express MonogoDB",
     "main": "app.js",
     "scripts": {
-        "clean": "rm -rf bundle",
         "watch-js": "./node_modules/.bin/babel src -d bundle --experimental -w",
-        "dev-server": "node bundle/server/webpack",
-        "server": "nodemon bundle/server/server",
         "start": "npm run watch-js & npm run dev-server & npm run server",
         "build": "npm run clean && ./node_modules/.bin/babel src -d bundle --experimental"
     },  
