@@ -6,17 +6,25 @@
 
 
 
-import jsx = from 'node-jsx';
 import React from 'react';
+import jsx from 'node-jsx';
 
 const JSX = jsx.install();
 //TweetsApp = require('./components/TweetsApp.react'),
 //Tweet = require('./models/Tweet');
 
+
 export {
     index(req, res) => {
+        //var markup = React.renderComponentToString(
+        //    TweetsApp({
+        //        tweets: tweets
+        //    })
+        //);
+
         res.render('index/index', {
-            message: 'from server'
+            markup: markup
         });
     }
 };
+
