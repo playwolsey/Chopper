@@ -1,39 +1,38 @@
-import express from "express";
-var engine = require('express-dot-engine');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var routes = require('./routes/routes');
-var config = require('./config/db.config');
+import express from 'express';
+import engine from 'express-dot-engine';
+import path from 'path';
+import http from 'http';
+import io from 'socket.io';
+import favicon  from 'serve-favicon';
+import logger  from 'morgan';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import routes from './routes';
+import config from './config/db.config';
 
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+const APP = express();
+const HTTP = http.Server(APP);
+const IO = io(HTTP);
 
- 
-app.engine('dot', engine.__express);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'dot');
+APP.engine('dot', engine.__express);
+APP.set('views', path.join(__dirname, 'views'));
+APP.set('views engine', 'dot');
 
+APP.use(favicon(__dirname + 'favicon.ico'));
+APP.use(logger('dev'));
+APP.use(cookieParser());
+APP.use(express.static(path.join(__dirname, './client/views')));
 
-app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(logger('dev'));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'views')));
+APP.use('/', routes);
 
-app.use('/', routes);
-
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+APP.use(function(req, res, next) {
+    let err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
-if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+if (APP.get('env') === 'development') {
+    APP.use((err, req, res, next) => {
         res.status(err.status || 500);
         res.render('common/error', {
             message: err.message,
@@ -42,7 +41,7 @@ if (app.get('env') === 'development') {
     });
 }
 
-app.use(function(err, req, res, next) {
+APP.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.render('common/error', {
         message: err.message,
@@ -50,10 +49,10 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.set('port', process.env.PORT || 2998);
+APP.set('port', process.env.PORT || 2998);
 
-var server = http.listen(app.get('port'), function() {
+let server = http.listen(app.get('port'), () => {
     console.log('Chopper server is listening on port ' + server.address().port);
 });
 
-module.exports = app;
+export default APP;
