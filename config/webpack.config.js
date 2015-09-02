@@ -5,7 +5,10 @@ var path = require('path'),
 
 var config = {
     entry: {
-        index: path.resolve(__dirname, '../public/javascripts/index/index.js'),
+        index: [
+            path.resolve(__dirname, '../public/javascripts/common/flex.js'),
+            path.resolve(__dirname, '../public/javascripts/index/index.js')
+        ],
         vendors: ['react']
     },
     resolve: {
