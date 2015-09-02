@@ -1,0 +1,16 @@
+---
+layout: ../common/layout.dot
+title: Chopper 
+---
+
+[[##wrapper:
+<section id="app">
+</section>
+
+[[= model.message]]
+#]]
+
+[[##script:
+<script src="/build/vendors.js"></script>
+<script src="/build/index.bundle.js"></script>
+#]]

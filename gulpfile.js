@@ -9,45 +9,44 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
-//var webpack = require('gulp-webpack');
-var webpack = require('webpack');
+var webpack = require('gulp-webpack');
 var path = require('path');
 
-var server_config = require('./config/webpack.server.config');
+var config = require('./config/webpack.config');
 
-var config = {
-    entry: path.resolve(__dirname, 'server/routes.js'),
-    output: {
-        path: path.resolve(__dirname, 'server-dist'),
-        filename: 'test.js'
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.js?$/,
-                exclude: /node_modules/,
-                loader: 'babel'
-            }
-        ]
-    }
-};
+//var config = {
+//    entry: path.resolve(__dirname, 'server/server.js'),
+//    output: {
+//        path: path.resolve(__dirname, 'server-dist'),
+//        filename: '[name].bundle.js'
+//    },
+//    module: {
+//        loaders: [
+//            {
+//                test: /\.js?$/,
+//                exclude: path.resolve(__dirname, 'node_modules'),
+//                loader: 'babel'
+//            }
+//        ]
+//    }
+//};
+//gulp.task('build-backend', function(done) {
+//    webpack(config).run(function(err, stats) {
+//        if (err) {
+//            console.log('Error', err);
+//        } else {
+//            console.log(stats.toString());
+//        }
+//        done();
+//    });
+//});
 
-gulp.task('build-server', function () {
-    return gulp.src('server')
-        .pipe(webpack(server_config))
-        .pipe(gulp.dest('server-dist'));
+gulp.task('build', function () {
+    gulp.src('public')
+        .pipe(webpack(config))
+        .pipe(gulp.dest('public/build'));
 });
 
-gulp.task('build-backend', function(done) {
-    webpack(config).run(function(err, stats) {
-        if (err) {
-            console.log('Error', err);
-        } else {
-            console.log(stats.toString());
-        }
-        done();
-    });
-});
 
 //gulp.task('publish-css', function () {
 //  return gulp.src(['./css/main.css', './css/view.css'])

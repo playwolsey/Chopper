@@ -1,11 +1,11 @@
 var path = require('path'),
     webpack = require('webpack'),
-    node_modules_dir = path.resolve(__dirname, '../node_modules'),
+    node_modules_dir = path.resolve(__dirname, 'node_modules'),
     pathToReact = path.resolve(node_modules_dir, 'react/dist/react.min.js');
 
 var config = {
     entry: {
-        index: path.resolve(__dirname, '../public/javascripts/index/index.js'),
+        index: path.resolve(__dirname, 'public/javascripts/index/index.js'),
         vendors: ['react']
     },
     resolve: {
@@ -14,7 +14,7 @@ var config = {
         }
     },
     output: {
-        path: path.resolve(__dirname, '../public/build'),
+        path: path.resolve(__dirname, 'public/build'),
         filename: '[name].bundle.js'
     },
     module: {
