@@ -10,6 +10,7 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var webpack = require('gulp-webpack');
+var nodemon = require('gulp-nodemon');
 var path = require('path');
 
 var config = require('./config/webpack.config');
@@ -47,29 +48,28 @@ gulp.task('build', function () {
         .pipe(gulp.dest('public/build'));
 });
 
-
-//gulp.task('publish-css', function () {
-//  return gulp.src(['./css/main.css', './css/view.css'])
-//    .pipe(concat('app.css'))
-//    .pipe(shrink())
-//    .pipe(rev())
-//    .pipe(gulp.dest('./build'))
-//    .pipe(qn({
-//      qiniu: qiniu,
-//      prefix: 'gmap'
-//    }))
-//    .pipe(rev.manifest())
-//    .pipe(gulp.dest('./build/rev/css'));
-//});
-
-gulp.task('watch', function () {
-    gulp.watch('./css/*.css', ['css']);
-    gulp.watch('./js/*.js', ['js']);
+gulp.task('watch', function() {
+    gulp.watch('public/javascripts/**/*.js', ['build']);
+    gulp.watch('public/css/**/*.less', ['build']);
+    gulp.watch('components/**/*.jsx', ['build']);
+    gulp.watch('components/**/*.less', ['build']);
 });
 
-//gulp.task('publish', function (callback) {
-//  runSequence(
-//    ['publish-css', 'publish-js'],
-//    'publish-html',
-//    callback);
-//});
+gulp.task('run', function(cb) {
+    var started = false;
+
+    nodemon({
+        execMap: {
+          js: 'node'
+        },
+        script: 'server.js'
+    })
+    .on('restart', ['watch'])
+    .on('restart', function() {
+        if (!started) {
+			cb();
+			started = true; 
+		} 
+        console.log('Restarted!');
+    });
+});
