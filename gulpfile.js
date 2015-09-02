@@ -11,6 +11,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var webpack = require('gulp-webpack');
 var nodemon = require('gulp-nodemon');
+var browserSync = require('browser-sync').create();
 var path = require('path');
 
 var config = require('./config/webpack.config');
@@ -64,12 +65,33 @@ gulp.task('run', function(cb) {
         },
         script: 'server.js'
     })
-    .on('restart', ['watch'])
-    .on('restart', function() {
+    .on('start', function() {
         if (!started) {
 			cb();
-			started = true; 
-		} 
+            started = true; 
+        } 
+
         console.log('Restarted!');
+    }, ['watch'])
+    .on('restart', function() {
+        setTimeout(function() {
+            browserSync.reload({
+                stream: false
+            });
+        }, 500);
     });
 });
+
+gulp.task('browser-sync', ['run'], function() {
+	browserSync.init(null, {
+		proxy: "http://10.240.129.0:2998",
+        files: [
+            "public/**/*.*",
+            "components/**/*.*"
+        ],
+        browser: "google chrome",
+        port: 7000,
+	});
+});
+
+gulp.task('default', ['browser-sync']);
