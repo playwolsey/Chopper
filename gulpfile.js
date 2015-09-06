@@ -50,29 +50,29 @@ gulp.task('build', function () {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('public/javascripts/**/*.js', ['build']).on('change', browserSync.reload);
-    gulp.watch('public/css/**/*.less', ['build']).on('change', browserSync.reload);
-    gulp.watch('components/**/*.jsx', ['build']).on('change', browserSync.reload);
-    gulp.watch('components/**/*.less', ['build']).on('change', browserSync.reload);
+    gulp.watch('public/javascripts/**/*.js', ['build']);
+    gulp.watch('public/css/**/*.less', ['build']);
+    gulp.watch('components/**/*.jsx', ['build']);
+    gulp.watch('components/**/*.less', ['build']);
 });
 
-gulp.task('run', function(cb) {
+gulp.task('run', ['watch'], function(cb) {
     var started = false;
 
     nodemon({
         execMap: {
           js: 'node'
         },
-        script: 'server.js'
+        script: 'server.js',
+        watch: ['server.js']
     })
     .on('start', function() {
         if (!started) {
 			cb();
             started = true; 
         } 
-
-        console.log('Restarted!');
-    }, ['watch'])
+    //}, ['watch'])
+    })
     .on('restart', function() {
         setTimeout(function() {
             browserSync.reload({
@@ -89,7 +89,7 @@ gulp.task('browser-sync', ['run'], function() {
             'public/**/*.*',
             'components/**/*.*'
         ],
-        browser: ["google-chrome"],
+        browser: ['google chrome'],
         port: 7000,
 	});
 });
