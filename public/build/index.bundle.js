@@ -457,14 +457,39 @@ webpackJsonp([0],[
 
 	var _componentsNavbarNavbarJsx2 = _interopRequireDefault(_componentsNavbarNavbarJsx);
 
+	var _componentsMovieMoviesJsx = __webpack_require__(12);
+
+	var _componentsMovieMoviesJsx2 = _interopRequireDefault(_componentsMovieMoviesJsx);
+
 	var App = _react2['default'].createClass({
 	    displayName: 'App',
+
+	    getInitialState: function getInitialState(props) {
+	        props = props || this.props;
+
+	        return {
+	            movies: props.movies
+	        };
+	    },
+
+	    componentDidMount: function componentDidMount() {
+	        //$.get(this.props.source, function(result) {
+	        //    var lastGist = result[0];
+	        //    if (this.isMounted()) {
+	        //        this.setState({
+	        //            username: lastGist.owner.login,
+	        //            lastGistUrl: lastGist.html_url
+	        //        });
+	        //    }
+	        //}.bind(this));
+	    },
 
 	    render: function render() {
 	        return _react2['default'].createElement(
 	            'section',
 	            { className: "app-wrapper" },
-	            _react2['default'].createElement(_componentsNavbarNavbarJsx2['default'], null)
+	            _react2['default'].createElement(_componentsNavbarNavbarJsx2['default'], null),
+	            _react2['default'].createElement(_componentsMovieMoviesJsx2['default'], null)
 	        );
 	    }
 	});
@@ -500,7 +525,7 @@ webpackJsonp([0],[
 	            _react2['default'].createElement(
 	                'span',
 	                { className: "title" },
-	                'title'
+	                'Movie'
 	            ),
 	            _react2['default'].createElement('span', { className: "nav" })
 	        );
@@ -545,10 +570,128 @@ webpackJsonp([0],[
 
 
 	// module
-	exports.push([module.id, "header.navbar {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: #627b9e;\n  z-index: 1000;\n  height: 2rem;\n  z-index: 10;\n}\nheader.navbar .title {\n  color: #fff;\n  text-shadow: 0 1px 0 black;\n  font-size: 1.2rem;\n  font-weight: bold;\n  line-height: 2rem;\n  text-align: center;\n  display: block;\n  position: absolute;\n  left: 2rem;\n  right: 2rem;\n  top: 0;\n}\nheader.navbar .nav {\n  float: left;\n  display: inline-block;\n  text-decoration: none;\n  overflow: hidden;\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n  -moz-user-select: -moz-none;\n  -webkit-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  width: 2rem;\n  height: 2rem;\n  background: -webkit-linear-gradient(bottom, #78624f, #846f5b);\n  background: -moz-linear-gradient(bottom, #78624f, #846f5b);\n  background: linear-gradient(to top, #78624f, #846f5b);\n  background-size: 1.3rem;\n  background-repeat: no-repeat;\n  background-position: .35rem .35rem;\n  border: 1px solid transparent;\n  position: relative;\n  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwAgMAAAAqbBEUAAAADFBMVEUAAAD///8AAAD////IZVEZAAAABHRSTlMAAFqzoa8xcgAAAClJREFUKM9jCEUCDFTm1P+Hgr9U52StgoKVSJY6MJLJGXUoDodSPVEAAN65RTMMRcUhAAAAAElFTkSuQmCC);\n}\n", ""]);
+	exports.push([module.id, "header.navbar {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: #DFDED4;\n  z-index: 1000;\n  height: 2rem;\n  z-index: 10;\n}\nheader.navbar .title {\n  color: #D6D3C4;\n  text-shadow: 0 1px 0 black;\n  font-size: 1.2rem;\n  font-weight: bold;\n  line-height: 2rem;\n  text-align: center;\n  display: block;\n  position: absolute;\n  left: 2rem;\n  right: 2rem;\n  top: 0;\n}\nheader.navbar .nav {\n  float: left;\n  display: inline-block;\n  text-decoration: none;\n  overflow: hidden;\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n  -moz-user-select: -moz-none;\n  -webkit-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  width: 2rem;\n  height: 2rem;\n  background: -webkit-linear-gradient(bottom, #78624f, #846f5b);\n  background: -moz-linear-gradient(bottom, #78624f, #846f5b);\n  background: linear-gradient(to top, #78624f, #846f5b);\n  background-size: 1.3rem;\n  background-repeat: no-repeat;\n  background-position: .35rem .35rem;\n  border: 1px solid transparent;\n  position: relative;\n  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwAgMAAAAqbBEUAAAADFBMVEUAAAD///8AAAD////IZVEZAAAABHRSTlMAAFqzoa8xcgAAAClJREFUKM9jCEUCDFTm1P+Hgr9U52StgoKVSJY6MJLJGXUoDodSPVEAAN65RTMMRcUhAAAAAElFTkSuQmCC);\n}\n", ""]);
 
 	// exports
 
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	__webpack_require__(13);
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _movieJsx = __webpack_require__(15);
+
+	var _movieJsx2 = _interopRequireDefault(_movieJsx);
+
+	var Movies = _react2['default'].createClass({
+	    displayName: 'Movies',
+
+	    render: function render() {
+	        var content = this.props.movies.map(function (movie) {
+	            return _react2['default'].createElement(_movieJsx2['default'], { movie: movie });
+	        });
+
+	        return _react2['default'].createElement(
+	            'ul',
+	            { className: "movies" },
+	            content
+	        );
+	    }
+	});
+
+	exports['default'] = Movies;
+	module.exports = exports['default'];
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(14);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./movies.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./movies.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".movies {\n  padding-top: 5rem;\n  margin-top: 5rem;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var Movie = _react2["default"].createClass({
+	    displayName: "Movie",
+
+	    render: function render() {
+	        var movie = this.props.movie;
+
+	        return _react2["default"].createElement(
+	            "li",
+	            { className: "movie" },
+	            _react2["default"].createElement(
+	                "p",
+	                null,
+	                "test"
+	            )
+	        );
+	    }
+	});
+
+	exports["default"] = Movie;
+	module.exports = exports["default"];
 
 /***/ }
 ]);

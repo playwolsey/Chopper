@@ -26,13 +26,35 @@
 
 import React from 'react';
 import Navbar from '../components/navbar/navbar.jsx';
+import Movies from '../components/movie/movies.jsx';
 
 
-var App = React.createClass({
+const App = React.createClass({
+    getInitialState: function(props) {
+        props = props || this.props;
+
+        return {
+            movies: props.movies
+        };
+    },
+
+    componentDidMount: function() {
+        //$.get(this.props.source, function(result) {
+        //    var lastGist = result[0];
+        //    if (this.isMounted()) {
+        //        this.setState({
+        //            username: lastGist.owner.login,
+        //            lastGistUrl: lastGist.html_url
+        //        });
+        //    }
+        //}.bind(this));
+    },
+
     render() {
         return (
             <section className="app-wrapper">
-                <Navbar/>
+                <Navbar />
+                <Movies />
             </section>
         )
     }
