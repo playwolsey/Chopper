@@ -2,17 +2,75 @@ webpackJsonp([0],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	__webpack_require__(1);
+	module.exports = __webpack_require__(2);
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	/**
+	 * @desc    rem rewrite
+	 * @author  chengpeng <chengpengcp9@gmail.com>
+	 * @date    2015-09-02
+	 */
+
+	'use strict';
+
+	;(function (win) {
+	    var h;
+	    var dpr = win.navigator.appVersion.match(/iphone/gi) ? win.devicePixelRatio : 1;
+	    var scale = 1 / dpr;
+	    var docEl = document.documentElement;
+	    var metaEl = document.createElement('meta');
+
+	    function setUnitA() {
+	        win.rem = docEl.getBoundingClientRect().width / 16;
+	        docEl.style.fontSize = win.rem + 'px';
+	    }
+
+	    win.dpr = dpr;
+	    win.addEventListener('resize', function () {
+	        clearTimeout(h);
+	        h = setTimeout(setUnitA, 300);
+	    }, false);
+	    win.addEventListener('pageshow', function (e) {
+	        if (e.persisted) {
+	            clearTimeout(h);
+	            h = setTimeout(setUnitA, 300);
+	        }
+	    }, false);
+
+	    docEl.setAttribute('data-dpr', dpr);
+	    metaEl.setAttribute('name', 'viewport');
+	    metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+	    if (docEl.firstElementChild) {
+	        docEl.firstElementChild.appendChild(metaEl);
+	    } else {
+	        var wrap = document.createElement('div');
+	        wrap.appendChild(metaEl);
+	        document.write(wrap.innerHTML);
+	    }
+
+	    setUnitA();
+	})(window);
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	__webpack_require__(1);
+	__webpack_require__(3);
 
-	var _react = __webpack_require__(5);
+	var _react = __webpack_require__(7);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _componentsNavbarNavbarJsx = __webpack_require__(6);
+	var _componentsNavbarNavbarJsx = __webpack_require__(8);
 
 	var _componentsNavbarNavbarJsx2 = _interopRequireDefault(_componentsNavbarNavbarJsx);
 
@@ -21,16 +79,16 @@ webpackJsonp([0],[
 	})();
 
 /***/ },
-/* 1 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(2);
+	var content = __webpack_require__(4);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -47,21 +105,21 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 2 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "@charset \"utf-8\";\nhtml {\n  color: #000;\n  background: #fff;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  text-size-adjust: 100%;\n}\nhtml * {\n  outline: none;\n  -webkit-text-size-adjust: none;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\nbody {\n  font-family: \"Helvetica Neue\", Helvetica, STHeiTi, sans-serif;\n}\n[data-dpr=\"1\"] body {\n  font-size: 12px;\n}\n[data-dpr=\"2\"] body {\n  font-size: 24px;\n}\n[data-dpr=\"3\"] body {\n  font-size: 36px;\n}\nbody,\ndiv,\ndl,\ndt,\ndd,\nul,\nol,\nli,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\npre,\ncode,\nform,\nfieldset,\nlegend,\ninput,\ntextarea,\np,\nblockquote,\nth,\ntd,\nhr,\nbutton,\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  margin: 0;\n  padding: 0;\n}\ninput,\nselect,\ntextarea {\n  font-size: 100%;\n}\ninput:-ms-clear {\n  display: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\nfieldset,\nimg {\n  border: 0;\n}\nabbr,\nacronym {\n  border: 0;\n  font-variant: normal;\n}\ndel {\n  text-decoration: line-through;\n}\naddress,\ncaption,\ncite,\ncode,\ndfn,\nem,\nth,\nvar {\n  font-style: normal;\n  font-weight: 500;\n}\nol,\nul {\n  list-style: none;\n}\ncaption,\nth {\n  text-align: left;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: 100%;\n  font-weight: 500;\n}\nq:before,\nq:after {\n  content: '';\n}\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\nsup {\n  top: -0.5em;\n}\nsub {\n  bottom: -0.25em;\n}\na:hover {\n  text-decoration: none;\n}\na:active {\n  text-decoration: none;\n}\nins,\na {\n  text-decoration: none;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 3 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/*
@@ -117,7 +175,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 4 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -342,8 +400,8 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 5 */,
-/* 6 */
+/* 7 */,
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -354,9 +412,9 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	__webpack_require__(7);
+	__webpack_require__(9);
 
-	var _react = __webpack_require__(5);
+	var _react = __webpack_require__(7);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -370,12 +428,12 @@ webpackJsonp([0],[
 	            _react2['default'].createElement(
 	                'span',
 	                { className: "title" },
-	                '12345'
+	                'title'
 	            ),
 	            _react2['default'].createElement(
 	                'span',
 	                { className: "nav" },
-	                '777'
+	                'test'
 	            ),
 	            _react2['default'].createElement(
 	                'p',
@@ -390,16 +448,16 @@ webpackJsonp([0],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 7 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(8);
+	var content = __webpack_require__(10);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -416,15 +474,15 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "header.navbar {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: #627b9e;\n  z-index: 1000;\n  height: 41.5px;\n  z-index: 10;\n}\nheader.navbar .title {\n  color: #fff;\n  text-shadow: 0 1px 0 black;\n  font-size: 20px;\n  font-weight: bold;\n  line-height: 42.5px;\n  text-align: center;\n  display: block;\n  position: absolute;\n  left: 40px;\n  right: 40px;\n  top: 0;\n}\n", ""]);
+	exports.push([module.id, "header.navbar {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: #627b9e;\n  z-index: 1000;\n  height: 2.075rem;\n  z-index: 10;\n}\nheader.navbar .title {\n  color: #fff;\n  text-shadow: 0 1px 0 black;\n  font-size: .5rem;\n  font-weight: bold;\n  line-height: 1.0625rem;\n  text-align: center;\n  display: block;\n  position: absolute;\n  left: 1rem;\n  right: 1rem;\n  top: 0;\n}\n", ""]);
 
 	// exports
 
