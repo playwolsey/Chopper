@@ -12,5 +12,5 @@ title: Chopper
 
 [[##script:
 <script src="/build/vendors.js"></script>
-<script src="/build/index.bundle.js"></script>
+<script async src="/build/index.bundle.js"></script>
 #]]
