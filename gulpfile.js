@@ -50,10 +50,10 @@ gulp.task('build', function () {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('public/javascripts/**/*.js', ['build']);
-    gulp.watch('public/css/**/*.less', ['build']);
-    gulp.watch('components/**/*.jsx', ['build']);
-    gulp.watch('components/**/*.less', ['build']);
+    gulp.watch('public/javascripts/**/*.js', ['build']).on('change', browserSync.reload);
+    gulp.watch('public/css/**/*.less', ['build']).on('change', browserSync.reload);
+    gulp.watch('components/**/*.jsx', ['build']).on('change', browserSync.reload);
+    gulp.watch('components/**/*.less', ['build']).on('change', browserSync.reload);
 });
 
 gulp.task('run', function(cb) {
@@ -84,12 +84,12 @@ gulp.task('run', function(cb) {
 
 gulp.task('browser-sync', ['run'], function() {
 	browserSync.init(null, {
-		proxy: "http://10.240.129.0:2998",
+		proxy: 'http://10.240.129.0:2998',
         files: [
-            "public/**/*.*",
-            "components/**/*.*"
+            'public/**/*.*',
+            'components/**/*.*'
         ],
-        browser: "google chrome",
+        browser: ["google-chrome"],
         port: 7000,
 	});
 });
