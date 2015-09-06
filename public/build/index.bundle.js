@@ -60,6 +60,17 @@ webpackJsonp([0],[
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
+	//import '../../css/common/reset.less';
+	//import React from 'react';
+	//import Navbar from '../../../components/navbar/navbar.jsx';
+	//
+	//;(function() {
+	//    React.render(
+	//        <Navbar />,
+	//        document.getElementById('app')
+	//    );
+	//})();
+
 	'use strict';
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -70,12 +81,12 @@ webpackJsonp([0],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _componentsNavbarNavbarJsx = __webpack_require__(8);
+	var _componentsAppJsx = __webpack_require__(8);
 
-	var _componentsNavbarNavbarJsx2 = _interopRequireDefault(_componentsNavbarNavbarJsx);
+	var _componentsAppJsx2 = _interopRequireDefault(_componentsAppJsx);
 
 	;(function () {
-	    _react2['default'].render(_react2['default'].createElement(_componentsNavbarNavbarJsx2['default'], null), document.getElementById('app'));
+	    _react2['default'].render(_react2['default'].createElement(_componentsAppJsx2['default'], null), document.getElementById('app'));
 	})();
 
 /***/ },
@@ -404,6 +415,32 @@ webpackJsonp([0],[
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
+	//import React from 'react';
+	//import Navbar from '../../../components/navbar/navbar.jsx';
+	//
+	//;(function() {
+	//    React.render(
+	//        <Navbar />,
+	//        document.getElementById('app')
+	//    );
+	//})();
+	//
+	//import './navbar.less';
+	//import React from 'react';
+	//
+	//var Navbar = React.createClass({
+	//    render() {
+	//        return (
+	//            <header className="navbar">
+	//                <span className="title">title</span>
+	//                <span className="nav"></span>
+	//            </header>
+	//        )
+	//    }
+	//});
+	//
+	//export default Navbar;
+
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
@@ -412,7 +449,42 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	__webpack_require__(9);
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _componentsNavbarNavbarJsx = __webpack_require__(9);
+
+	var _componentsNavbarNavbarJsx2 = _interopRequireDefault(_componentsNavbarNavbarJsx);
+
+	var App = _react2['default'].createClass({
+	    displayName: 'App',
+
+	    render: function render() {
+	        return _react2['default'].createElement(
+	            'section',
+	            { className: "app-wrapper" },
+	            _react2['default'].createElement(_componentsNavbarNavbarJsx2['default'], null)
+	        );
+	    }
+	});
+
+	exports['default'] = App;
+	module.exports = exports['default'];
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	__webpack_require__(10);
 
 	var _react = __webpack_require__(7);
 
@@ -430,16 +502,7 @@ webpackJsonp([0],[
 	                { className: "title" },
 	                'title'
 	            ),
-	            _react2['default'].createElement(
-	                'span',
-	                { className: "nav" },
-	                'test'
-	            ),
-	            _react2['default'].createElement(
-	                'p',
-	                null,
-	                'xxxx'
-	            )
+	            _react2['default'].createElement('span', { className: "nav" })
 	        );
 	    }
 	});
@@ -448,13 +511,13 @@ webpackJsonp([0],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(10);
+	var content = __webpack_require__(11);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(6)(content, {});
@@ -474,7 +537,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -482,7 +545,7 @@ webpackJsonp([0],[
 
 
 	// module
-	exports.push([module.id, "header.navbar {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: #627b9e;\n  z-index: 1000;\n  height: 2.075rem;\n  z-index: 10;\n}\nheader.navbar .title {\n  color: #fff;\n  text-shadow: 0 1px 0 black;\n  font-size: .5rem;\n  font-weight: bold;\n  line-height: 1.0625rem;\n  text-align: center;\n  display: block;\n  position: absolute;\n  left: 1rem;\n  right: 1rem;\n  top: 0;\n}\n", ""]);
+	exports.push([module.id, "header.navbar {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: #627b9e;\n  z-index: 1000;\n  height: 2rem;\n  z-index: 10;\n}\nheader.navbar .title {\n  color: #fff;\n  text-shadow: 0 1px 0 black;\n  font-size: 1.2rem;\n  font-weight: bold;\n  line-height: 2rem;\n  text-align: center;\n  display: block;\n  position: absolute;\n  left: 2rem;\n  right: 2rem;\n  top: 0;\n}\nheader.navbar .nav {\n  float: left;\n  display: inline-block;\n  text-decoration: none;\n  overflow: hidden;\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n  -moz-user-select: -moz-none;\n  -webkit-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  width: 2rem;\n  height: 2rem;\n  background: -webkit-linear-gradient(bottom, #78624f, #846f5b);\n  background: -moz-linear-gradient(bottom, #78624f, #846f5b);\n  background: linear-gradient(to top, #78624f, #846f5b);\n  background-size: 1.3rem;\n  background-repeat: no-repeat;\n  background-position: .35rem .35rem;\n  border: 1px solid transparent;\n  position: relative;\n  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwAgMAAAAqbBEUAAAADFBMVEUAAAD///8AAAD////IZVEZAAAABHRSTlMAAFqzoa8xcgAAAClJREFUKM9jCEUCDFTm1P+Hgr9U52StgoKVSJY6MJLJGXUoDodSPVEAAN65RTMMRcUhAAAAAElFTkSuQmCC);\n}\n", ""]);
 
 	// exports
 

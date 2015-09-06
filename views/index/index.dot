@@ -6,8 +6,6 @@ title: Chopper
 [[##wrapper:
 <section id="app">
 </section>
-
-[[= model.message]]
 #]]
 
 [[##script:
