@@ -15,7 +15,8 @@ var JSX = require('node-jsx').install();
 
 var index = function(req, res) {
     res.render('index/index', {
-        message: 'markup'
+        message: 'markup',
+        code: 0
     });
 };
 
