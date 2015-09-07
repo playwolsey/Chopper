@@ -438,35 +438,29 @@ webpackJsonp([0],[
 	var App = _react2['default'].createClass({
 	    displayName: 'App',
 
-	    getInitialState: function getInitialState(props) {
-	        props = props || this.props;
-
+	    getInitialState: function getInitialState() {
 	        return {
-	            movies: props.movies
+	            movies: []
 	        };
 	    },
 
-	    componentWillReceiveProps: function componentWillReceiveProps(newProps, oldProps) {
-	        this.setState(this.getInitialState(newProps));
-	    },
-
-	    //componentWillMount() {
-	    //    this.setState(this.getInitialState({movies:{b:1}}));
+	    //componentWillReceiveProps(newProps, oldProps) {
+	    //    this.setState(this.getInitialState(newProps));
 	    //},
 
 	    componentDidMount: function componentDidMount() {
 	        var request = new XMLHttpRequest();
 	        var _this = this;
 
-	        request.open('GET', 'page/' + page + "/" + this.state.skip, true);
+	        //request.open('GET', 'https://api.douban.com/v2/movie/top250', true);
+	        request.open('GET', '../top.json', true);
 	        request.onload = function () {
 	            if (request.status >= 200 && request.status < 400) {
-	                // Load our next page
-	                //self.loadPagedTweets(JSON.parse(request.responseText));
+	                _this.setState({ movies: JSON.parse(request.responseText) });
 	            } else {
-	                    // Set application state (Not paging, paging complete)
-	                    //self.setState({paging: false, done: true});
-	                }
+	                // Set application state (Not paging, paging complete)
+	                // self.setState({paging: false, done: true});
+	            }
 	        };
 
 	        request.send();
