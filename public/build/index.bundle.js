@@ -417,10 +417,6 @@ webpackJsonp([0],[
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
-	});
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var _react = __webpack_require__(7);
@@ -438,6 +434,10 @@ webpackJsonp([0],[
 	var App = _react2['default'].createClass({
 	    displayName: 'App',
 
+	    showNav: function showNav() {
+	        alert(9);
+	    },
+
 	    getInitialState: function getInitialState() {
 	        return {
 	            movies: []
@@ -447,7 +447,7 @@ webpackJsonp([0],[
 	    //componentWillReceiveProps(newProps, oldProps) {
 	    //    this.setState(this.getInitialState(newProps));
 	    //},
-
+	    //
 	    componentDidMount: function componentDidMount() {
 	        var request = new XMLHttpRequest();
 	        var _this = this;
@@ -470,14 +470,11 @@ webpackJsonp([0],[
 	        return _react2['default'].createElement(
 	            'section',
 	            { className: "app-wrapper" },
-	            _react2['default'].createElement(_componentsNavbarNavbarJsx2['default'], null),
+	            _react2['default'].createElement(_componentsNavbarNavbarJsx2['default'], { onShowNav: this.showNav }),
 	            _react2['default'].createElement(_componentsMovieMoviesJsx2['default'], { movies: this.state.movies })
 	        );
 	    }
 	});
-
-	exports['default'] = App;
-	module.exports = exports['default'];
 
 /***/ },
 /* 9 */
@@ -509,7 +506,7 @@ webpackJsonp([0],[
 	                { className: "title" },
 	                'Movie'
 	            ),
-	            _react2['default'].createElement('span', { className: "nav" })
+	            _react2['default'].createElement('span', { className: "nav", onClick: this.props.onShowNav })
 	        );
 	    }
 	});

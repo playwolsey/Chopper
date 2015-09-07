@@ -4,6 +4,10 @@ import Movies from '../components/movie/movies.jsx';
 
 
 const App = React.createClass({
+    showNav() {
+        alert(9);
+    },
+
     getInitialState() {
         return {
             movies: []
@@ -13,7 +17,7 @@ const App = React.createClass({
     //componentWillReceiveProps(newProps, oldProps) {
     //    this.setState(this.getInitialState(newProps));
     //},
-
+    //
     componentDidMount() {
         let request = new XMLHttpRequest();
         let _this = this;
@@ -35,11 +39,9 @@ const App = React.createClass({
     render() {
         return (
             <section className="app-wrapper">
-                <Navbar />
+                <Navbar onShowNav={this.showNav} />
                 <Movies movies={this.state.movies}/>
             </section>
         )
     }
 });
-
-export default App;
