@@ -633,7 +633,7 @@ webpackJsonp([0],[
 
 
 	// module
-	exports.push([module.id, ".movies {\n  padding-top: 1rem;\n  margin-top: 2rem;\n}\n.movies .movie {\n  text-align: center;\n  padding: 1rem;\n  margin: 1rem;\n  background-color: #FFF;\n  border-radius: 20px;\n}\n", ""]);
+	exports.push([module.id, ".movies {\n  padding-top: 1rem;\n  margin-top: 2rem;\n}\n.movies .movie {\n  text-align: center;\n  padding: 1rem;\n  margin: 1rem;\n  background-color: #FFF;\n  border-radius: 20px;\n}\n.movies .movie:first-child {\n  margin-top: 0;\n}\n.movies .movie:first-child p {\n  color: #9C6A8D;\n}\n", ""]);
 
 	// exports
 
@@ -669,22 +669,22 @@ webpackJsonp([0],[
 	            _react2['default'].createElement('img', { src: movie.images.large }),
 	            _react2['default'].createElement(
 	                'p',
-	                null,
+	                { className: "o_title" },
 	                movie.original_title
 	            ),
 	            _react2['default'].createElement(
 	                'p',
-	                null,
+	                { className: "title" },
 	                movie.title
 	            ),
 	            _react2['default'].createElement(
 	                'p',
-	                null,
+	                { className: "average" },
 	                movie.rating.average
 	            ),
 	            _react2['default'].createElement(
 	                'p',
-	                null,
+	                { className: "genres" },
 	                genres
 	            )
 	        );
