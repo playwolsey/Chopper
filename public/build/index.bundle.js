@@ -633,7 +633,7 @@ webpackJsonp([0],[
 
 
 	// module
-	exports.push([module.id, ".movies {\n  padding-top: 5rem;\n  margin-top: 5rem;\n}\n", ""]);
+	exports.push([module.id, ".movies {\n  padding-top: 1rem;\n  margin-top: 2rem;\n}\n", ""]);
 
 	// exports
 
