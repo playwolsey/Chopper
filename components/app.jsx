@@ -30,15 +30,19 @@ import Movies from '../components/movie/movies.jsx';
 
 
 const App = React.createClass({
-    getInitialState: function(props) {
+    getInitialState(props) {
         props = props || this.props;
 
         return {
             movies: props.movies
         };
     },
+    
+    //componentWillReceiveProps(newProps, oldProps) {
+    //    this.setState(this.getInitialState(newProps));
+    //},
 
-    componentDidMount: function() {
+    componentDidMount() {
         //$.get(this.props.source, function(result) {
         //    var lastGist = result[0];
         //    if (this.isMounted()) {
@@ -48,13 +52,19 @@ const App = React.createClass({
         //        });
         //    }
         //}.bind(this));
+        this.setState({
+            movies: {
+                a:1,
+                b:2
+            }
+        });
     },
 
     render() {
         return (
             <section className="app-wrapper">
                 <Navbar />
-                <Movies />
+                <Movies movies={this.state.movies}/>
             </section>
         )
     }

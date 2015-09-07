@@ -472,6 +472,10 @@ webpackJsonp([0],[
 	        };
 	    },
 
+	    //componentWillReceiveProps(newProps, oldProps) {
+	    //    this.setState(this.getInitialState(newProps));
+	    //},
+
 	    componentDidMount: function componentDidMount() {
 	        //$.get(this.props.source, function(result) {
 	        //    var lastGist = result[0];
@@ -482,6 +486,12 @@ webpackJsonp([0],[
 	        //        });
 	        //    }
 	        //}.bind(this));
+	        this.setState({
+	            movies: {
+	                a: 1,
+	                b: 2
+	            }
+	        });
 	    },
 
 	    render: function render() {
@@ -489,7 +499,7 @@ webpackJsonp([0],[
 	            'section',
 	            { className: "app-wrapper" },
 	            _react2['default'].createElement(_componentsNavbarNavbarJsx2['default'], null),
-	            _react2['default'].createElement(_componentsMovieMoviesJsx2['default'], null)
+	            _react2['default'].createElement(_componentsMovieMoviesJsx2['default'], { movies: this.state.movies })
 	        );
 	    }
 	});
