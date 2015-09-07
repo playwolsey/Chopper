@@ -6,7 +6,10 @@ const Movie = React.createClass({
 
         return (
             <li className="movie">
-                <p>test</p>
+                <img src={movie.images.large} />
+                <p>{movie.original_title}</p>
+                <p>{movie.title}</p>
+                <p>{movie.rating.average}</p>
             </li>
         )
     }

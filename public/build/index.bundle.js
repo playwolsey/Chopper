@@ -456,7 +456,7 @@ webpackJsonp([0],[
 	        request.open('GET', '../top.json', true);
 	        request.onload = function () {
 	            if (request.status >= 200 && request.status < 400) {
-	                _this.setState({ movies: JSON.parse(request.responseText) });
+	                _this.setState({ movies: JSON.parse(request.responseText).subjects });
 	            } else {
 	                // Set application state (Not paging, paging complete)
 	                // self.setState({paging: false, done: true});
@@ -663,10 +663,21 @@ webpackJsonp([0],[
 	        return _react2["default"].createElement(
 	            "li",
 	            { className: "movie" },
+	            _react2["default"].createElement("img", { src: movie.images.large }),
 	            _react2["default"].createElement(
 	                "p",
 	                null,
-	                "test"
+	                movie.original_title
+	            ),
+	            _react2["default"].createElement(
+	                "p",
+	                null,
+	                movie.title
+	            ),
+	            _react2["default"].createElement(
+	                "p",
+	                null,
+	                movie.rating.average
 	            )
 	        );
 	    }

@@ -22,7 +22,7 @@ const App = React.createClass({
         request.open('GET', '../top.json', true);
         request.onload = () => {
             if (request.status >= 200 && request.status < 400) {
-                _this.setState({movies: JSON.parse(request.responseText)});
+                _this.setState({movies: JSON.parse(request.responseText).subjects});
             } else {
                 // Set application state (Not paging, paging complete)
                 // self.setState({paging: false, done: true});
