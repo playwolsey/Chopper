@@ -642,49 +642,57 @@ webpackJsonp([0],[
 /* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	    value: true
 	});
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var _react = __webpack_require__(7);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var Movie = _react2["default"].createClass({
-	    displayName: "Movie",
+	var Movie = _react2['default'].createClass({
+	    displayName: 'Movie',
 
 	    render: function render() {
 	        var movie = this.props.movie;
+	        var genres = movie.genres.map(function (g) {
+	            return '' + g + ' ';
+	        });
 
-	        return _react2["default"].createElement(
-	            "li",
+	        return _react2['default'].createElement(
+	            'li',
 	            { className: "movie" },
-	            _react2["default"].createElement("img", { src: movie.images.large }),
-	            _react2["default"].createElement(
-	                "p",
+	            _react2['default'].createElement('img', { src: movie.images.large }),
+	            _react2['default'].createElement(
+	                'p',
 	                null,
 	                movie.original_title
 	            ),
-	            _react2["default"].createElement(
-	                "p",
+	            _react2['default'].createElement(
+	                'p',
 	                null,
 	                movie.title
 	            ),
-	            _react2["default"].createElement(
-	                "p",
+	            _react2['default'].createElement(
+	                'p',
 	                null,
 	                movie.rating.average
+	            ),
+	            _react2['default'].createElement(
+	                'p',
+	                null,
+	                genres
 	            )
 	        );
 	    }
 	});
 
-	exports["default"] = Movie;
-	module.exports = exports["default"];
+	exports['default'] = Movie;
+	module.exports = exports['default'];
 
 /***/ }
 ]);

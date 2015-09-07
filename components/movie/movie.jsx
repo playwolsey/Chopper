@@ -3,6 +3,9 @@ import React from 'react';
 const Movie = React.createClass({
     render() {
         let movie = this.props.movie;
+        let genres = movie.genres.map((g) => {
+            return '' + g + ' ';
+        }); 
 
         return (
             <li className="movie">
@@ -10,6 +13,7 @@ const Movie = React.createClass({
                 <p>{movie.original_title}</p>
                 <p>{movie.title}</p>
                 <p>{movie.rating.average}</p>
+                <p>{genres}</p>
             </li>
         )
     }
