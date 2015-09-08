@@ -417,6 +417,10 @@ webpackJsonp([0],[
 
 	'use strict';
 
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var _react = __webpack_require__(7);
@@ -475,6 +479,9 @@ webpackJsonp([0],[
 	        );
 	    }
 	});
+
+	exports['default'] = App;
+	module.exports = exports['default'];
 
 /***/ },
 /* 9 */
