@@ -124,7 +124,7 @@ webpackJsonp([0],[
 
 
 	// module
-	exports.push([module.id, "@charset \"utf-8\";\nhtml {\n  color: #000;\n  background: #FAF9F4;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  text-size-adjust: 100%;\n}\nhtml * {\n  outline: none;\n  -webkit-text-size-adjust: none;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\nbody {\n  font-family: \"Helvetica Neue\", Helvetica, STHeiTi, sans-serif;\n}\n[data-dpr=\"1\"] body {\n  font-size: 12px;\n}\n[data-dpr=\"2\"] body {\n  font-size: 24px;\n}\n[data-dpr=\"3\"] body {\n  font-size: 36px;\n}\nbody,\ndiv,\ndl,\ndt,\ndd,\nul,\nol,\nli,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\npre,\ncode,\nform,\nfieldset,\nlegend,\ninput,\ntextarea,\np,\nblockquote,\nth,\ntd,\nhr,\nbutton,\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  margin: 0;\n  padding: 0;\n}\ninput,\nselect,\ntextarea {\n  font-size: 100%;\n}\ninput:-ms-clear {\n  display: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\nfieldset,\nimg {\n  border: 0;\n}\nabbr,\nacronym {\n  border: 0;\n  font-variant: normal;\n}\ndel {\n  text-decoration: line-through;\n}\naddress,\ncaption,\ncite,\ncode,\ndfn,\nem,\nth,\nvar {\n  font-style: normal;\n  font-weight: 500;\n}\nol,\nul {\n  list-style: none;\n}\ncaption,\nth {\n  text-align: left;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: 100%;\n  font-weight: 500;\n}\nq:before,\nq:after {\n  content: '';\n}\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\nsup {\n  top: -0.5em;\n}\nsub {\n  bottom: -0.25em;\n}\na:hover {\n  text-decoration: none;\n}\na:active {\n  text-decoration: none;\n}\nins,\na {\n  text-decoration: none;\n}\n", ""]);
+	exports.push([module.id, "@charset \"utf-8\";\nhtml {\n  color: #000;\n  background: #FAF9F4;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  text-size-adjust: 100%;\n}\nhtml * {\n  outline: none;\n  -webkit-text-size-adjust: none;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\nbody {\n  font-family: \"Helvetica Neue\", Helvetica, STHeiTi, sans-serif;\n  overflow-x: hidden;\n}\n[data-dpr=\"1\"] body {\n  font-size: 12px;\n}\n[data-dpr=\"2\"] body {\n  font-size: 24px;\n}\n[data-dpr=\"3\"] body {\n  font-size: 36px;\n}\nbody,\ndiv,\ndl,\ndt,\ndd,\nul,\nol,\nli,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\npre,\ncode,\nform,\nfieldset,\nlegend,\ninput,\ntextarea,\np,\nblockquote,\nth,\ntd,\nhr,\nbutton,\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  margin: 0;\n  padding: 0;\n}\ninput,\nselect,\ntextarea {\n  font-size: 100%;\n}\ninput:-ms-clear {\n  display: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\nfieldset,\nimg {\n  border: 0;\n}\nabbr,\nacronym {\n  border: 0;\n  font-variant: normal;\n}\ndel {\n  text-decoration: line-through;\n}\naddress,\ncaption,\ncite,\ncode,\ndfn,\nem,\nth,\nvar {\n  font-style: normal;\n  font-weight: 500;\n}\nol,\nul {\n  list-style: none;\n}\ncaption,\nth {\n  text-align: left;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: 100%;\n  font-weight: 500;\n}\nq:before,\nq:after {\n  content: '';\n}\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\nsup {\n  top: -0.5em;\n}\nsub {\n  bottom: -0.25em;\n}\na:hover {\n  text-decoration: none;\n}\na:active {\n  text-decoration: none;\n}\nins,\na {\n  text-decoration: none;\n}\n", ""]);
 
 	// exports
 
@@ -431,7 +431,11 @@ webpackJsonp([0],[
 
 	var _componentsNavbarNavbarJsx2 = _interopRequireDefault(_componentsNavbarNavbarJsx);
 
-	var _componentsMovieMoviesJsx = __webpack_require__(12);
+	var _componentsNavtreeNavtreeJsx = __webpack_require__(12);
+
+	var _componentsNavtreeNavtreeJsx2 = _interopRequireDefault(_componentsNavtreeNavtreeJsx);
+
+	var _componentsMovieMoviesJsx = __webpack_require__(15);
 
 	var _componentsMovieMoviesJsx2 = _interopRequireDefault(_componentsMovieMoviesJsx);
 
@@ -439,7 +443,7 @@ webpackJsonp([0],[
 	    displayName: 'App',
 
 	    showNav: function showNav() {
-	        alert(9);
+	        var node = _react2['default'].findDOMNode(this.refs.app_wrapper);
 	    },
 
 	    getInitialState: function getInitialState() {
@@ -468,9 +472,8 @@ webpackJsonp([0],[
 	    render: function render() {
 	        return _react2['default'].createElement(
 	            'section',
-	            { className: "app-wrapper" },
-	            _react2['default'].createElement(_componentsNavbarNavbarJsx2['default'], { onShowNav: this.showNav }),
-	            _react2['default'].createElement(_componentsMovieMoviesJsx2['default'], { movies: this.state.movies })
+	            { className: "app-wrapper", ref: "app_wrapper" },
+	            _react2['default'].createElement(_componentsNavtreeNavtreeJsx2['default'], null)
 	        );
 	    }
 	});
@@ -551,7 +554,7 @@ webpackJsonp([0],[
 
 
 	// module
-	exports.push([module.id, "header.navbar {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: #9C6A8D;\n  z-index: 1000;\n  height: 2rem;\n  z-index: 10;\n}\nheader.navbar .title {\n  color: #fff;\n  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);\n  font-size: 1.2rem;\n  font-weight: bold;\n  line-height: 2rem;\n  text-align: center;\n  display: block;\n  position: absolute;\n  left: 2rem;\n  right: 2rem;\n  top: 0;\n}\nheader.navbar .nav {\n  float: left;\n  display: inline-block;\n  text-decoration: none;\n  overflow: hidden;\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n  -moz-user-select: -moz-none;\n  -webkit-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  width: 2rem;\n  height: 2rem;\n  background: -webkit-linear-gradient(bottom, #78624f, #846f5b);\n  background: -moz-linear-gradient(bottom, #78624f, #846f5b);\n  background: linear-gradient(to top, #78624f, #846f5b);\n  background-size: 1.3rem;\n  background-repeat: no-repeat;\n  background-position: .35rem .35rem;\n  border: 1px solid transparent;\n  position: relative;\n  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwAgMAAAAqbBEUAAAADFBMVEUAAAD///8AAAD////IZVEZAAAABHRSTlMAAFqzoa8xcgAAAClJREFUKM9jCEUCDFTm1P+Hgr9U52StgoKVSJY6MJLJGXUoDodSPVEAAN65RTMMRcUhAAAAAElFTkSuQmCC);\n}\n", ""]);
+	exports.push([module.id, "header.navbar {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: #9C6A8D;\n  z-index: 1000;\n  height: 2rem;\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  -moz-user-select: -moz-none;\n  -webkit-user-select: none;\n  -ms-user-select: none;\n}\nheader.navbar .title {\n  color: #fff;\n  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);\n  font-size: 1.2rem;\n  font-weight: bold;\n  line-height: 2rem;\n  text-align: center;\n  display: block;\n  position: absolute;\n  left: 2rem;\n  right: 2rem;\n  top: 0;\n}\nheader.navbar .nav {\n  float: left;\n  display: inline-block;\n  text-decoration: none;\n  overflow: hidden;\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n  width: 2rem;\n  height: 2rem;\n  background: -webkit-linear-gradient(bottom, #78624f, #846f5b);\n  background: -moz-linear-gradient(bottom, #78624f, #846f5b);\n  background: linear-gradient(to top, #78624f, #846f5b);\n  background-size: 1.3rem;\n  background-repeat: no-repeat;\n  background-position: .35rem .35rem;\n  border: 1px solid transparent;\n  position: relative;\n  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwAgMAAAAqbBEUAAAADFBMVEUAAAD///8AAAD////IZVEZAAAABHRSTlMAAFqzoa8xcgAAAClJREFUKM9jCEUCDFTm1P+Hgr9U52StgoKVSJY6MJLJGXUoDodSPVEAAN65RTMMRcUhAAAAAElFTkSuQmCC);\n}\n", ""]);
 
 	// exports
 
@@ -574,7 +577,197 @@ webpackJsonp([0],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _movieJsx = __webpack_require__(15);
+	var Navtree = _react2['default'].createClass({
+	    displayName: 'Navtree',
+
+	    render: function render() {
+	        return _react2['default'].createElement(
+	            'section',
+	            { className: "navtree" },
+	            _react2['default'].createElement(
+	                'header',
+	                null,
+	                _react2['default'].createElement(
+	                    'h2',
+	                    { className: "title" },
+	                    '艾玛'
+	                ),
+	                _react2['default'].createElement(
+	                    'div',
+	                    { className: "user" },
+	                    _react2['default'].createElement(
+	                        'a',
+	                        { href: "#", className: "nav-accounts" },
+	                        '登录/注册'
+	                    )
+	                )
+	            ),
+	            _react2['default'].createElement(
+	                'div',
+	                { className: "nav-wrap" },
+	                _react2['default'].createElement(
+	                    'div',
+	                    { className: "search" },
+	                    _react2['default'].createElement(
+	                        'form',
+	                        { action: "" },
+	                        _react2['default'].createElement('input', { type: "text", name: "search_text", placeholder: "电影,导演,影片类型" }),
+	                        _react2['default'].createElement('input', { type: "hidden", name: "cat", value: "1002" }),
+	                        _react2['default'].createElement(
+	                            'button',
+	                            { className: "close-search" },
+	                            '取消'
+	                        )
+	                    )
+	                ),
+	                _react2['default'].createElement(
+	                    'h6',
+	                    null,
+	                    'ceshi'
+	                ),
+	                _react2['default'].createElement(
+	                    'ul',
+	                    null,
+	                    _react2['default'].createElement(
+	                        'li',
+	                        null,
+	                        _react2['default'].createElement(
+	                            'a',
+	                            { href: "#" },
+	                            '1234'
+	                        )
+	                    ),
+	                    _react2['default'].createElement(
+	                        'li',
+	                        null,
+	                        _react2['default'].createElement(
+	                            'a',
+	                            { href: "#" },
+	                            '5678'
+	                        )
+	                    ),
+	                    _react2['default'].createElement(
+	                        'li',
+	                        null,
+	                        _react2['default'].createElement(
+	                            'a',
+	                            { href: "#" },
+	                            'abcd'
+	                        )
+	                    ),
+	                    _react2['default'].createElement(
+	                        'li',
+	                        null,
+	                        _react2['default'].createElement(
+	                            'a',
+	                            { href: "#" },
+	                            'efg'
+	                        )
+	                    ),
+	                    _react2['default'].createElement(
+	                        'li',
+	                        null,
+	                        _react2['default'].createElement(
+	                            'a',
+	                            { href: "#" },
+	                            '分类'
+	                        )
+	                    ),
+	                    _react2['default'].createElement(
+	                        'li',
+	                        null,
+	                        _react2['default'].createElement(
+	                            'a',
+	                            { href: "#" },
+	                            'hao'
+	                        )
+	                    ),
+	                    _react2['default'].createElement(
+	                        'li',
+	                        null,
+	                        _react2['default'].createElement(
+	                            'a',
+	                            { href: "#" },
+	                            'test'
+	                        )
+	                    ),
+	                    _react2['default'].createElement(
+	                        'li',
+	                        null,
+	                        _react2['default'].createElement(
+	                            'a',
+	                            { href: "#" },
+	                            'mmda'
+	                        )
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+
+	exports['default'] = Navtree;
+	module.exports = exports['default'];
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(14);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./navtree.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./navtree.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".navtree {\n  background: #B6DEDC;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 20%;\n  color: #FAF9F4;\n}\n.navtree header {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  background: #52B4AF;\n  border-bottom: 1px solid #53B5B0;\n  display: block;\n  height: 2.2rem;\n  line-height: 2.2rem;\n  z-index: 10;\n}\n.navtree header .title {\n  float: left;\n  width: 30%;\n  padding: 0 0 0 .425rem;\n  font-size: 1rem;\n}\n.navtree header .user {\n  float: right;\n  width: 55%;\n  text-align: right;\n  padding-right: 15px;\n}\n.navtree header .user a {\n  text-decoration: none;\n  color: #FFF;\n  -webkit-tap-highlight-color: rgba(0, 119, 220, 0.2);\n}\n.navtree .nav-wrap {\n  overflow-y: scroll;\n  margin-top: 2.5rem;\n}\n.navtree .nav-wrap .search {\n  padding: 0 .375rem .375rem;\n}\n.navtree .nav-wrap .search input {\n  display: block;\n  padding: .275rem .275rem .275rem 2.25rem;\n  color: #fff;\n  font-size: .65rem;\n  border-radius: 4px;\n  background: #cfefef url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMzgwMTE3NDA3MjA2ODExOEE2REYwRjYyMDk5RTU5MiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNzQ4QTE0NjU1RkIxMUU1OUNCQkM2RDk2RDlBQTVGMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNzQ4QTE0NTU1RkIxMUU1OUNCQkM2RDk2RDlBQTVGMyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDExNEJBMzA3RTc0MTFFM0E1NDNBRjgxRUI1MzFEREMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDExNEJBMzE3RTc0MTFFM0E1NDNBRjgxRUI1MzFEREMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4akgJ2AAADIElEQVR42sSYSWgUQRSGe8ZlDKgHjQuogVGjhzjGFdGDxjUHNYpmUIgiKMGLIgh60eDcAsGLJzGISi5BDxJ3mZi44AoRIxiJGo8qJi4xuIEm4//gKc2zqrprphwffBTzuun+aulaJpLJZDwZFan9MjUebABLwSxQBIbytW7wDNwFF6g8n6r7+6EhIxIgNAMcBEkQDfnMF6AWNECs31ZI9xKqfR1oB5ssZCiKwQnQhoolcm4hPGQsiktgnpd7fAfb0FJnshJiGRoLUzT3d4Jm0AF6QAGIg4VghW9c+YNesANSJ62EIBNDcQfMVdzXCmpYVhejwB6wj0X9MQBWQarFZgzVKmR+gJ1geYAMxQdwCCR47Mn3NKLSo0MJ4cZSrp2UqQD1luPmJVgC7ov8GK50qBZKKb6k3eBqNiMZXdOHYi14JS5tR+XjRiHcMBHlOpG/Do7l8nlB6h2KXSI9CFQHtdBGGtwiX+PgkyepJhQPRXpzkNAykXvOX5urOCV+x9ErRSYhOZu2eG6jWZGbaRKaJHIdjoW6wE+Rm2ASGixyX1za8AIrn1lgEpLL/RDPfcTE736T0GuRm+bShAfwMJF+YxLqFLkyx62zWJF7YhK6KXK07ZjuUGiL+N3DU4tW6Kwif8BRd81HUS7STRjoA1ohXKTP/J7Ib+X9TS4yMc3yUx92cZXRmO0Ahww99ziYLS5dRgO0BQrhpjQ1pbhWCG7zbtAmhoPTirFD29m9Nhu0asV2gfYwt8BhFjTuPsF68BhUKq5/Ms0/uj11KQuMVNz7FZwD1/iz7eYZdzJYxEel4oD3UYXL0CNdNqcO6vcrYJz3b8IoFVWsPY9QzHGw6r8H3xR5WlhvoOJTbQ6KtJysBFV8TLYJkjjC3bdGs1hrpSIhzvZRnpOSfPpQ7Yk/8lx2kaYLtHKv71kLUKQ145K6r5znQmMLyTNVmr9CGsAjQAkvMSX8RwQdb1aDo6BXDIEHdCYDfYaWStgIyfgMnvJemcq3ii2MZyFF00nrb6mol6cIK5U3oZBSDXkVCpCiAZ7Mu5BG6s9k+V+EhFS7f+b+JcAApbkAKKcQ1rsAAAAASUVORK5CYII=) no-repeat;\n  background-size: .9rem;\n  background-position: .275rem .2rem;\n  border: 0 none;\n  outline: 0;\n  width: 8.55rem;\n}\n.navtree .nav-wrap h6 {\n  background: #CFEFEF;\n  color: #FAF9F4;\n  padding: .25rem .75rem;\n  font-size: .55rem;\n  line-height: .65rem;\n}\n.navtree .nav-wrap ul li a {\n  overflow: hidden;\n  display: block;\n  padding: .65rem .75rem .65rem 0;\n  font-size: .75rem;\n  color: #fff;\n  margin-left: .75rem;\n  border-bottom: 1px solid #52B4AF;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	__webpack_require__(16);
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _movieJsx = __webpack_require__(18);
 
 	var _movieJsx2 = _interopRequireDefault(_movieJsx);
 
@@ -598,13 +791,13 @@ webpackJsonp([0],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 13 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(14);
+	var content = __webpack_require__(17);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(6)(content, {});
@@ -624,7 +817,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 14 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -638,7 +831,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 15 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

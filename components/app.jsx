@@ -1,11 +1,12 @@
 import React from 'react';
 import Navbar from '../components/navbar/navbar.jsx';
+import Navtree from '../components/navtree/navtree.jsx';
 import Movies from '../components/movie/movies.jsx';
 
 
 const App = React.createClass({
     showNav() {
-        alert(9);
+        var node = React.findDOMNode(this.refs.app_wrapper);
     },
 
     getInitialState() {
@@ -33,9 +34,8 @@ const App = React.createClass({
 
     render() {
         return (
-            <section className="app-wrapper">
-                <Navbar onShowNav={this.showNav} />
-                <Movies movies={this.state.movies}/>
+            <section className="app-wrapper" ref="app_wrapper">
+                <Navtree />
             </section>
         )
     }

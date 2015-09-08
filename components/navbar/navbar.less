@@ -6,7 +6,11 @@ header.navbar {
     background: #9C6A8D;
     z-index: 1000;
     height: 2rem;
-    z-index: 10;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 
     .title {
         color: #fff;
@@ -29,15 +33,11 @@ header.navbar {
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;
-        -moz-user-select: -moz-none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
         width: 2rem;
         height: 2rem;
-        background: -webkit-linear-gradient(bottom,#78624f,#846f5b);
-        background: -moz-linear-gradient(bottom,#78624f,#846f5b);
-        background: linear-gradient(to top,#78624f,#846f5b);
+        background: -webkit-linear-gradient(bottom, #78624f, #846f5b);
+        background: -moz-linear-gradient(bottom, #78624f, #846f5b);
+        background: linear-gradient(to top, #78624f, #846f5b);
         background-size: 1.3rem;
         background-repeat: no-repeat;
         background-position: .35rem .35rem;
