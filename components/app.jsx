@@ -6,7 +6,8 @@ import Movies from '../components/movie/movies.jsx';
 
 const App = React.createClass({
     showNav() {
-        var node = React.findDOMNode(this.refs.app_wrapper);
+        let node = React.findDOMNode(this.refs.main_wrapper);
+        node.classList.add('slide-right');
     },
 
     getInitialState() {
@@ -34,8 +35,12 @@ const App = React.createClass({
 
     render() {
         return (
-            <section className="app-wrapper" ref="app_wrapper">
+            <section className="app-wrapper">
                 <Navtree />
+                <section className="main-wrapper" ref="main_wrapper">
+                    <Navbar onShowNav={this.showNav} />
+                    <Movies movies={this.state.movies} />
+                </section>
             </section>
         )
     }

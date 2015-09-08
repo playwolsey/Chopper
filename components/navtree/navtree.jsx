@@ -26,9 +26,9 @@ var Navtree = React.createClass({
                         <li><a href="#">1234</a></li>
                         <li><a href="#">5678</a></li>
                         <li><a href="#">abcd</a></li>
-                        <li><a href="#">efg</a></li>
+                        <li><a href="#">efgh</a></li>
                         <li><a href="#">分类</a></li>
-                        <li><a href="#">hao</a></li>
+                        <li><a href="#">haoa</a></li>
                         <li><a href="#">test</a></li>
                         <li><a href="#">mmda</a></li>
                     </ul>
