@@ -448,10 +448,6 @@ webpackJsonp([0],[
 	        };
 	    },
 
-	    //componentWillReceiveProps(newProps, oldProps) {
-	    //    this.setState(this.getInitialState(newProps));
-	    //},
-	    //
 	    componentDidMount: function componentDidMount() {
 	        var request = new XMLHttpRequest();
 	        var _this = this;
@@ -462,8 +458,7 @@ webpackJsonp([0],[
 	            if (request.status >= 200 && request.status < 400) {
 	                _this.setState({ movies: JSON.parse(request.responseText).subjects });
 	            } else {
-	                // Set application state (Not paging, paging complete)
-	                // self.setState({paging: false, done: true});
+	                //_this.setState({});
 	            }
 	        };
 
@@ -637,7 +632,7 @@ webpackJsonp([0],[
 
 
 	// module
-	exports.push([module.id, ".movies {\n  padding-top: 1rem;\n  margin-top: 2rem;\n}\n.movies .movie {\n  text-align: center;\n  padding: 1rem;\n  margin: 1rem;\n  background-color: #FFF;\n  border-radius: 20px;\n}\n.movies .movie:first-child {\n  margin-top: 0;\n}\n.movies .movie:first-child p {\n  color: #9C6A8D;\n}\n", ""]);
+	exports.push([module.id, ".movies {\n  padding-top: 1rem;\n  margin-top: 2rem;\n}\n.movies .movie {\n  text-align: center;\n  padding: 1rem;\n  margin: 1rem;\n  background-color: #FFF;\n  border-radius: 20px;\n}\n.movies .movie p {\n  color: #9C6A8D;\n}\n.movies .movie:first-child {\n  margin-top: 0;\n}\n", ""]);
 
 	// exports
 
