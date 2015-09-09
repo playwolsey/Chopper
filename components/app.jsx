@@ -41,7 +41,7 @@ const App = React.createClass({
     render() {
         return (
             <section className="app-wrapper">
-                <Navtree ref="navtree" />
+                <Navtree ref="navtree" height={this.state.height} />
                 <section className="main-wrapper" ref="main_wrapper">
                     <Navbar onShowNav={this.showNav} />
                     <Movies movies={this.state.movies} height={this.state.height} />
