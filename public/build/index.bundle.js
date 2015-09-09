@@ -3,8 +3,7 @@ webpackJsonp([0],[
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	__webpack_require__(2);
-	module.exports = __webpack_require__(3);
+	module.exports = __webpack_require__(2);
 
 
 /***/ },
@@ -59,42 +58,6 @@ webpackJsonp([0],[
 
 /***/ },
 /* 2 */
-/***/ function(module, exports) {
-
-	/*! Normalized address bar hiding for iOS & Android (c) @scottjehl MIT License */
-
-	"use strict";
-
-	;(function (win, undef) {
-	    var doc = win.document;
-
-	    if (!win.navigator.standalone && !location.hash && win.addEventListener) {
-	        win.scrollTo(0, 1);
-
-	        var scrollTop = 1,
-	            getScrollTop = function getScrollTop() {
-	            return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
-	        },
-	            bodycheck = setInterval(function () {
-	            if (doc.body) {
-	                clearInterval(bodycheck);
-	                scrollTop = getScrollTop();
-	                win.scrollTo(0, scrollTop === 1 ? 0 : 1);
-	            }
-	        }, 15);
-
-	        win.addEventListener("load", function () {
-	            setTimeout(function () {
-	                if (getScrollTop() < 20) {
-	                    win.scrollTo(0, scrollTop === 1 ? 0 : 1);
-	                }
-	            }, 0);
-	        }, false);
-	    }
-	})(window);
-
-/***/ },
-/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//import '../../css/common/reset.less';
@@ -112,13 +75,13 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	__webpack_require__(4);
+	__webpack_require__(3);
 
-	var _react = __webpack_require__(8);
+	var _react = __webpack_require__(7);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _componentsAppJsx = __webpack_require__(9);
+	var _componentsAppJsx = __webpack_require__(8);
 
 	var _componentsAppJsx2 = _interopRequireDefault(_componentsAppJsx);
 
@@ -127,16 +90,16 @@ webpackJsonp([0],[
 	})();
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(5);
+	var content = __webpack_require__(4);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -153,10 +116,10 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
@@ -167,7 +130,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/*
@@ -223,7 +186,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -448,8 +411,8 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 8 */,
-/* 9 */
+/* 7 */,
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -460,23 +423,23 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _react = __webpack_require__(8);
+	var _react = __webpack_require__(7);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _componentsNavbarNavbarJsx = __webpack_require__(10);
+	var _componentsNavbarNavbarJsx = __webpack_require__(9);
 
 	var _componentsNavbarNavbarJsx2 = _interopRequireDefault(_componentsNavbarNavbarJsx);
 
-	var _componentsNavtreeNavtreeJsx = __webpack_require__(13);
+	var _componentsNavtreeNavtreeJsx = __webpack_require__(12);
 
 	var _componentsNavtreeNavtreeJsx2 = _interopRequireDefault(_componentsNavtreeNavtreeJsx);
 
-	var _componentsMovieMoviesJsx = __webpack_require__(16);
+	var _componentsMovieMoviesJsx = __webpack_require__(15);
 
 	var _componentsMovieMoviesJsx2 = _interopRequireDefault(_componentsMovieMoviesJsx);
 
-	__webpack_require__(20);
+	__webpack_require__(19);
 
 	var App = _react2['default'].createClass({
 	    displayName: 'App',
@@ -491,7 +454,8 @@ webpackJsonp([0],[
 
 	    getInitialState: function getInitialState() {
 	        return {
-	            movies: []
+	            movies: [],
+	            height: document.documentElement.clientHeight
 	        };
 	    },
 
@@ -521,7 +485,7 @@ webpackJsonp([0],[
 	                'section',
 	                { className: "main-wrapper", ref: "main_wrapper" },
 	                _react2['default'].createElement(_componentsNavbarNavbarJsx2['default'], { onShowNav: this.showNav }),
-	                _react2['default'].createElement(_componentsMovieMoviesJsx2['default'], { movies: this.state.movies })
+	                _react2['default'].createElement(_componentsMovieMoviesJsx2['default'], { movies: this.state.movies, height: this.state.height })
 	            )
 	        );
 	    }
@@ -531,7 +495,7 @@ webpackJsonp([0],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -542,9 +506,9 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	__webpack_require__(11);
+	__webpack_require__(10);
 
-	var _react = __webpack_require__(8);
+	var _react = __webpack_require__(7);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -569,16 +533,16 @@ webpackJsonp([0],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(12);
+	var content = __webpack_require__(11);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -595,10 +559,10 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
@@ -609,7 +573,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -620,9 +584,9 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	__webpack_require__(14);
+	__webpack_require__(13);
 
-	var _react = __webpack_require__(8);
+	var _react = __webpack_require__(7);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -759,16 +723,16 @@ webpackJsonp([0],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(15);
+	var content = __webpack_require__(14);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -785,10 +749,10 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
@@ -799,7 +763,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -810,13 +774,13 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	__webpack_require__(17);
+	__webpack_require__(16);
 
-	var _react = __webpack_require__(8);
+	var _react = __webpack_require__(7);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _movieJsx = __webpack_require__(19);
+	var _movieJsx = __webpack_require__(18);
 
 	var _movieJsx2 = _interopRequireDefault(_movieJsx);
 
@@ -830,7 +794,7 @@ webpackJsonp([0],[
 
 	        return _react2['default'].createElement(
 	            'section',
-	            { className: "movies-wrapper" },
+	            { className: "movies-wrapper", style: { height: this.props.height } },
 	            _react2['default'].createElement(
 	                'div',
 	                { className: "banner-unit" },
@@ -858,16 +822,16 @@ webpackJsonp([0],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(18);
+	var content = __webpack_require__(17);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -884,21 +848,21 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".movies-wrapper .banner-unit article {\n  padding: 2rem 0 0 0;\n  background: #FAF9F4;\n}\n.movies-wrapper .banner-unit .top-tips {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  text-align: center;\n  font-size: .5rem;\n  color: #999;\n  height: 2rem;\n  line-height: 2rem;\n}\n.movies-wrapper .movies {\n  padding-top: 1rem;\n}\n.movies-wrapper .movies .movie {\n  text-align: center;\n  padding: 1rem;\n  margin: 1rem;\n  background-color: #FFF;\n  border-radius: 20px;\n}\n.movies-wrapper .movies .movie p {\n  color: #9C6A8D;\n}\n.movies-wrapper .movies .movie:first-child {\n  margin-top: 0;\n}\n", ""]);
+	exports.push([module.id, ".movies-wrapper {\n  overflow-y: scroll;\n}\n.movies-wrapper .banner-unit article {\n  padding: 2rem 0 0 0;\n  background: #FAF9F4;\n}\n.movies-wrapper .banner-unit .top-tips {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  text-align: center;\n  font-size: .5rem;\n  color: #999;\n  height: 2rem;\n  line-height: 2rem;\n}\n.movies-wrapper .movies {\n  padding-top: 1rem;\n}\n.movies-wrapper .movies .movie {\n  text-align: center;\n  padding: 1rem;\n  margin: 1rem;\n  background-color: #FFF;\n  border-radius: 20px;\n}\n.movies-wrapper .movies .movie p {\n  color: #9C6A8D;\n}\n.movies-wrapper .movies .movie:first-child {\n  margin-top: 0;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -909,7 +873,7 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _react = __webpack_require__(8);
+	var _react = __webpack_require__(7);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -954,16 +918,16 @@ webpackJsonp([0],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(21);
+	var content = __webpack_require__(20);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -980,15 +944,15 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".app-wrapper .main-wrapper {\n  background-color: #FAF9F4;\n}\n.slide-right {\n  -webkit-transform: translateX(80%);\n  -moz-transform: translateX(80%);\n  -ms-transform: translateX(80%);\n  transform: translateX(80%);\n  -webkit-transition: -webkit-transform 0.4s;\n  -moz-transition: -moz-transform 0.4s;\n  transition: transform .4s;\n}\n.hidden {\n  display: none !important;\n  visibility: hidden !important;\n}\n", ""]);
+	exports.push([module.id, ".app-wrapper .main-wrapper {\n  background-color: #FAF9F4;\n}\n.app-wrapper .main-wrapper div {\n  display: block;\n  overflow-y: scroll;\n}\n.slide-right {\n  -webkit-transform: translateX(80%);\n  -moz-transform: translateX(80%);\n  -ms-transform: translateX(80%);\n  transform: translateX(80%);\n  -webkit-transition: -webkit-transform 0.4s;\n  -moz-transition: -moz-transform 0.4s;\n  transition: transform .4s;\n}\n.hidden {\n  display: none !important;\n  visibility: hidden !important;\n}\n", ""]);
 
 	// exports
 

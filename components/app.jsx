@@ -16,7 +16,8 @@ const App = React.createClass({
 
     getInitialState() {
         return {
-            movies: []
+            movies: [],
+            height: document.documentElement.clientHeight
         };
     },
     
@@ -41,9 +42,9 @@ const App = React.createClass({
         return (
             <section className="app-wrapper">
                 <Navtree ref="navtree" />
-                <section className="main-wrapper" ref="main_wrapper" >
+                <section className="main-wrapper" ref="main_wrapper">
                     <Navbar onShowNav={this.showNav} />
-                    <Movies movies={this.state.movies} />
+                    <Movies movies={this.state.movies} height={this.state.height} />
                 </section>
             </section>
         )

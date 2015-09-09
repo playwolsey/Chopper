@@ -11,7 +11,7 @@ const Movies = React.createClass({
         });
 
         return (
-            <section className="movies-wrapper">
+            <section className="movies-wrapper" style={{height:this.props.height}}>
                 <div className="banner-unit">
                     <article></article>
                     <div className="top-tips"><span>tips: 点击顶栏可返回顶部，向下拖拽顶栏可显示网址</span></div>
