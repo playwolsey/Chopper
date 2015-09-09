@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="description" content="react" />
-    <meta name="keywords" content="react"/>
+    <meta name="keywords" content="react" />
     <meta name="author" content="awwwesssooooome" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+
     <title>[[= layout.title ]]</title>
 </head>
 
