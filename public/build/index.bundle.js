@@ -439,7 +439,11 @@ webpackJsonp([0],[
 
 	var _componentsMovieMoviesJsx2 = _interopRequireDefault(_componentsMovieMoviesJsx);
 
-	__webpack_require__(19);
+	var _componentsMaskMaskJsx = __webpack_require__(19);
+
+	var _componentsMaskMaskJsx2 = _interopRequireDefault(_componentsMaskMaskJsx);
+
+	__webpack_require__(22);
 
 	var App = _react2['default'].createClass({
 	    displayName: 'App',
@@ -447,9 +451,25 @@ webpackJsonp([0],[
 	    showNav: function showNav() {
 	        var main = _react2['default'].findDOMNode(this.refs.main_wrapper);
 	        var tree = _react2['default'].findDOMNode(this.refs.navtree);
+	        var mask = _react2['default'].findDOMNode(this.refs.mask);
 
-	        main.classList.toggle('slide-right');
-	        tree.classList.toggle('hidden');
+	        main.classList.add('slide-right');
+	        mask.style.display = 'block';
+	        mask.style.opacity = '.25';
+
+	        tree.classList.remove('hidden');
+	    },
+
+	    hideNav: function hideNav() {
+	        var main = _react2['default'].findDOMNode(this.refs.main_wrapper);
+	        var tree = _react2['default'].findDOMNode(this.refs.navtree);
+	        var mask = _react2['default'].findDOMNode(this.refs.mask);
+
+	        main.classList.remove('slide-right');
+	        mask.style.display = 'none';
+	        mask.style.opacity = '0';
+
+	        tree.classList.add('hidden');
 	    },
 
 	    getInitialState: function getInitialState() {
@@ -468,9 +488,7 @@ webpackJsonp([0],[
 	        request.onload = function () {
 	            if (request.status >= 200 && request.status < 400) {
 	                _this.setState({ movies: JSON.parse(request.responseText).subjects });
-	            } else {
-	                //_this.setState({});
-	            }
+	            } else {}
 	        };
 
 	        request.send();
@@ -485,7 +503,8 @@ webpackJsonp([0],[
 	                'section',
 	                { className: "main-wrapper", ref: "main_wrapper" },
 	                _react2['default'].createElement(_componentsNavbarNavbarJsx2['default'], { onShowNav: this.showNav }),
-	                _react2['default'].createElement(_componentsMovieMoviesJsx2['default'], { movies: this.state.movies, height: this.state.height })
+	                _react2['default'].createElement(_componentsMovieMoviesJsx2['default'], { movies: this.state.movies, height: this.state.height }),
+	                _react2['default'].createElement(_componentsMaskMaskJsx2['default'], { ref: "mask", onHideNav: this.hideNav })
 	            )
 	        );
 	    }
@@ -925,10 +944,79 @@ webpackJsonp([0],[
 /* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(20);
+
+	var Mask = _react2['default'].createClass({
+	    displayName: 'Mask',
+
+	    render: function render() {
+	        return _react2['default'].createElement('div', { className: "mask", onClick: this.props.onHideNav });
+	    }
+	});
+
+	exports['default'] = Mask;
+	module.exports = exports['default'];
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(20);
+	var content = __webpack_require__(21);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./mask.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./mask.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".mask {\n  z-index: 1010;\n  display: none;\n  opacity: 0;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: #000;\n  padding-bottom: 60px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(23);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(6)(content, {});
@@ -948,7 +1036,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 20 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -956,7 +1044,7 @@ webpackJsonp([0],[
 
 
 	// module
-	exports.push([module.id, ".app-wrapper .main-wrapper {\n  background-color: #FAF9F4;\n}\n.app-wrapper .main-wrapper div {\n  display: block;\n  overflow-y: scroll;\n}\n.slide-right {\n  -webkit-transform: translateX(80%);\n  -moz-transform: translateX(80%);\n  -ms-transform: translateX(80%);\n  transform: translateX(80%);\n  -webkit-transition: -webkit-transform 0.4s;\n  -moz-transition: -moz-transform 0.4s;\n  transition: transform .4s;\n}\n.hidden {\n  display: none !important;\n  visibility: hidden !important;\n}\n", ""]);
+	exports.push([module.id, ".app-wrapper .main-wrapper {\n  background-color: #FAF9F4;\n}\n.slide-right {\n  -webkit-transform: translateX(80%);\n  -moz-transform: translateX(80%);\n  -ms-transform: translateX(80%);\n  transform: translateX(80%);\n  -webkit-transition: -webkit-transform 0.4s;\n  -moz-transition: -moz-transform 0.4s;\n  transition: transform .4s;\n}\n.hidden {\n  display: none !important;\n  visibility: hidden !important;\n}\n", ""]);
 
 	// exports
 

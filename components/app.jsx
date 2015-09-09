@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/navbar/navbar.jsx';
 import Navtree from '../components/navtree/navtree.jsx';
 import Movies from '../components/movie/movies.jsx';
+import Mask from '../components/mask/mask.jsx';
 import './app.less';
 
 
@@ -9,9 +10,25 @@ const App = React.createClass({
     showNav() {
         let main = React.findDOMNode(this.refs.main_wrapper);
         let tree = React.findDOMNode(this.refs.navtree);
+        let mask = React.findDOMNode(this.refs.mask);
 
-        main.classList.toggle('slide-right');
-        tree.classList.toggle('hidden');
+        main.classList.add('slide-right');
+        mask.style.display = 'block';
+        mask.style.opacity = '.25';
+
+        tree.classList.remove('hidden');
+    },
+
+    hideNav() {
+        let main = React.findDOMNode(this.refs.main_wrapper);
+        let tree = React.findDOMNode(this.refs.navtree);
+        let mask = React.findDOMNode(this.refs.mask);
+
+        main.classList.remove('slide-right');
+        mask.style.display = 'none';
+        mask.style.opacity = '0';
+
+        tree.classList.add('hidden');
     },
 
     getInitialState() {
@@ -31,7 +48,6 @@ const App = React.createClass({
             if (request.status >= 200 && request.status < 400) {
                 _this.setState({movies: JSON.parse(request.responseText).subjects});
             } else {
-                //_this.setState({});
             }
         };
 
@@ -45,6 +61,7 @@ const App = React.createClass({
                 <section className="main-wrapper" ref="main_wrapper">
                     <Navbar onShowNav={this.showNav} />
                     <Movies movies={this.state.movies} height={this.state.height} />
+                    <Mask ref="mask" onHideNav={this.hideNav}/>
                 </section>
             </section>
         )
