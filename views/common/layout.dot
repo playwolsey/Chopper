@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="react" />
+    <meta name="keywords" content="react"/>
+    <meta name="author" content="awwwesssooooome" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>[[= layout.title ]]</title>
 </head>
 
