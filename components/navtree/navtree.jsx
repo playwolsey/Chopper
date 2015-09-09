@@ -20,13 +20,16 @@ var Navtree = React.createClass({
                             <input type="hidden" name="cat" value="1002" />
                         </form>
                     </div>
-                    <h6>ceshi</h6>
+                    <h6>导航</h6>
                     <ul>
                         <li><a href="javascript:void(0);">1234</a></li>
                         <li><a href="javascript:void(0);">5678</a></li>
                         <li><a href="javascript:void(0);">abcd</a></li>
                         <li><a href="javascript:void(0);">efgh</a></li>
                         <li><a href="javascript:void(0);">分类</a></li>
+                    </ul>
+                    <h6>设置</h6>
+                    <ul>
                         <li><a href="javascript:void(0);">haoa</a></li>
                         <li><a href="javascript:void(0);">test</a></li>
                         <li><a href="javascript:void(0);">mmda</a></li>
