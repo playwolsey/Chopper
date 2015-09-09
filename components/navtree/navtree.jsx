@@ -4,7 +4,7 @@ import React from 'react';
 var Navtree = React.createClass({
     render() {
         return (
-            <section className="navtree">
+            <section className="navtree hidden">
                 <header>
                     <h2 className="title">
                         艾玛

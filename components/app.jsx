@@ -2,12 +2,16 @@ import React from 'react';
 import Navbar from '../components/navbar/navbar.jsx';
 import Navtree from '../components/navtree/navtree.jsx';
 import Movies from '../components/movie/movies.jsx';
+import './app.less';
 
 
 const App = React.createClass({
     showNav() {
-        let node = React.findDOMNode(this.refs.main_wrapper);
-        node.classList.add('slide-right');
+        let main = React.findDOMNode(this.refs.main_wrapper);
+        let tree = React.findDOMNode(this.refs.navtree);
+
+        main.classList.toggle('slide-right');
+        tree.classList.toggle('hidden');
     },
 
     getInitialState() {
@@ -36,8 +40,8 @@ const App = React.createClass({
     render() {
         return (
             <section className="app-wrapper">
-                <Navtree />
-                <section className="main-wrapper" ref="main_wrapper">
+                <Navtree ref="navtree" />
+                <section className="main-wrapper" ref="main_wrapper" >
                     <Navbar onShowNav={this.showNav} />
                     <Movies movies={this.state.movies} />
                 </section>
