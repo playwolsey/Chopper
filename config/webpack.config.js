@@ -7,6 +7,7 @@ var config = {
     entry: {
         index: [
             path.resolve(__dirname, '../public/javascripts/common/flex.js'),
+            path.resolve(__dirname, '../public/javascripts/common/hide-address-bar.js'),
             path.resolve(__dirname, '../public/javascripts/index/index.js')
         ],
         vendors: ['react']
