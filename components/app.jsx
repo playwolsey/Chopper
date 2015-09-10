@@ -24,7 +24,7 @@ const App = React.createClass({
         let tree = React.findDOMNode(this.refs.navtree);
         let mask = React.findDOMNode(this.refs.mask);
 
-        main.classList.remove('slide-right');
+        main.classList.add('slide-back');
         mask.style.display = 'none';
         mask.style.opacity = '0';
 
