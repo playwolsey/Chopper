@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 node_modules
 npm-debug.log
 server-dist
 public/build/*.*
+=======
+node_modules
+npm-debug.log
+server-dist
+public/build/*.*
+>>>>>>> 0e8664a5930052b4becab8ce01dfc754619448b5
