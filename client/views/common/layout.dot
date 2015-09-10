@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>[[= layout.title ]]</title>
+</head>
+
+<body>
+[[= layout.wrapper ]]
+
+[[= layout.script ]]
+</body>
+</html>

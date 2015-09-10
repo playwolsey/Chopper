@@ -1,0 +1,14 @@
+---
+layout: ../common/layout.dot
+title: Movie 
+---
+
+[[##wrapper:
+<section id="app">
+</section>
+#]]
+
+[[##script:
+<script src="/build/vendors.js"></script>
+<script async src="/build/index.bundle.js"></script>
+#]]
