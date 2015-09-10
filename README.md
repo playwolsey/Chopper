@@ -2,7 +2,6 @@
 
 [![npm package][npm-ver-link]]
 [![][dl-badge]][npm-pkg-link]
-[![][travis-logo]][travis]
 ![][mit-badge]
 
 
@@ -44,6 +43,7 @@ gulp
 [license]: http://opensource.org/licenses/MIT
 [author]: http://playwolsey.github.com
 [mit-badge]: https://img.shields.io/badge/license-MIT-444444.svg?style=flat-square
+[dl-badge]: http://img.shields.io/npm/dm/parsec.svg?style=flat-square
 [npm-pkg-link]: https://www.npmjs.org/package/parsec
 [npm-ver-link]: https://img.shields.io/npm/v/parsec.svg?style=flat-square
 [contributors]: https://github.com/playwolsey/Chopper/graphs/contributors
