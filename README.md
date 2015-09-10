@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 > CLI parser
 
 [![][parsec-badge]][parsec]
@@ -458,19 +457,20 @@ I also found the following projects useful and inspiring while writing Parsec:
 # Hacking
 
 ```sh
-git clone https://github.com/bucaran/parsec
-cd parsec
-npm run setup
+git clone https://github.com/playsolsey/Chopper
+cd Chopper
+npm install
+gulp
 ```
 
 # License
 
-[MIT][license] © [Jorge Bucaran][author] et [al][contributors]
+[MIT][license] © [playwolsey][author] et [al][contributors]
 :heart:
 
 
 [license]: http://opensource.org/licenses/MIT
-[author]: http://about.bucaran.me
+[author]: http://playwolsey.github.com
 [parsec]: https://www.github.com/bucaran/parsec
 [parsec-badge]: https://img.shields.io/badge/parsec-JS-33CCFF.svg?style=flat-square
 [mit-badge]: https://img.shields.io/badge/license-MIT-444444.svg?style=flat-square
@@ -479,5 +479,4 @@ npm run setup
 [dl-badge]: http://img.shields.io/npm/dm/parsec.svg?style=flat-square
 [travis-logo]: http://img.shields.io/travis/bucaran/parsec.svg?style=flat-square
 [travis]: https://travis-ci.org/bucaran/parsec
-[contributors]: https://github.com/bucaran/parsec/graphs/contributors
->>>>>>> 0e8664a5930052b4becab8ce01dfc754619448b5
+[contributors]: https://github.com/playwolsey/Chopper/graphs/contributors
