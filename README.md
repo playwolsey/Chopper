@@ -1,6 +1,6 @@
 > Chopper
 
-[![npm package][npm-ver-link]]
+![npm package][npm-ver-link]
 [![][dl-badge]][npm-pkg-link]
 ![][mit-badge]
 
