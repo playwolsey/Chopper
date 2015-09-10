@@ -237,4 +237,4 @@ npm run setup
 [dl-badge]: http://img.shields.io/npm/dm/parsec.svg?style=flat-square
 [travis-logo]: http://img.shields.io/travis/bucaran/parsec.svg?style=flat-square
 [travis]: https://travis-ci.org/bucaran/parsec
-[contributors]: https://github.com/bucaran/parsec/graphs/contributors
+[contributors]: https://github.com/playwolsey/Chopper/graphs/contributors
