@@ -16,7 +16,7 @@ app.engine('dot', engine.__express);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'dot');
 
-app.use(favicon(__dirname + '/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'views')));
