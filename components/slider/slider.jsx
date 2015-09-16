@@ -1,6 +1,8 @@
 import React from 'react';
 import './slider.less';
 
+React.initializeTouchEvents(true);
+
 const Slider = React.createClass({
     handleEvent(e) {
         switch (e.type) {
