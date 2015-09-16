@@ -1,0 +1,50 @@
+ads({
+    "ads":[
+        {
+            "rid": 95077, 
+            "sid": 7095, 
+            "img": "https://gw.alicdn.com/tps/i3/TB18EcbJpXXXXaTXFXXdIns_XXX-1125-352.jpg_q50.jpg", 
+            "login": 0, 
+            "title": "居家会场", 
+            "target": "http://mp.beibei.com/hms/2015/9/zsznqjj.html", 
+            "desc": "居家会场", 
+            "ver": "1.0.0", 
+            "begin": 1442242800, 
+            "end": 1442332800, 
+            "height": 200, 
+            "width": 640, 
+            "buying_info": "1万人在抢"
+        }, 
+        {
+            "rid": 95078, 
+            "sid": 7118, 
+            "img": "https://gw.alicdn.com/tps/i3/TB18EcbJpXXXXaTXFXXdIns_XXX-1125-352.jpg_q50.jpg", 
+            "login": 0, 
+            "title": "婴儿装", 
+            "target": "http://mp.beibei.com/hms/2015/9/zsznqyez.html", 
+            "desc": "婴儿装", 
+            "ver": "1.0.0", 
+            "begin": 1442242800, 
+            "end": 1442332800, 
+            "height": 200, 
+            "width": 640, 
+            "buying_info": "9924人在抢"
+        }, 
+        {
+            "rid": 95079, 
+            "sid": 7120, 
+            "img": "https://gw.alicdn.com/tps/i3/TB18EcbJpXXXXaTXFXXdIns_XXX-1125-352.jpg_q50.jpg", 
+            "login": 0, 
+            "title": "童车床", 
+            "target": "http://mp.beibei.com/hms/2015/9/zsznqtcc.html", 
+            "desc": "童车床", 
+            "ver": "1.0.0", 
+            "begin": 1442242800, 
+            "end": 1442332800, 
+            "height": 200, 
+            "width": 640, 
+            "buying_info": "9926人在抢"
+        } 
+    ], 
+    "latest_config_time": 0
+})

@@ -3,6 +3,7 @@ import Navbar from '../components/navbar/navbar.jsx';
 import Navtree from '../components/navtree/navtree.jsx';
 import Movies from '../components/movie/movies.jsx';
 import Mask from '../components/mask/mask.jsx';
+import Slider from '../components/slider/slider.jsx';
 import './app.less';
 
 
@@ -60,6 +61,7 @@ const App = React.createClass({
     render() {
         return (
             <section className="app-wrapper">
+                <Slider source="adss.json" fullSpage="1"/>
                 <Navtree ref="navtree" height={this.state.height} />
                 <section className="main-wrapper" ref="main_wrapper">
                     <Navbar onShowNav={this.showNav} />
