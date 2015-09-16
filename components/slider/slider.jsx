@@ -6,20 +6,20 @@ const Slider = React.createClass({
         switch (e.type) {
             case 'touchstart':
                 this.start(e);
-            break;
+                break;
             case 'touchmove':
                 this.move(e);
-            break;
+                break;
             case 'touchend':
-                case 'touchcancel':
+            case 'touchcancel':
                 this.end(e);
-            break;
+                break;
             case 'webkitTransitionEnd':
-                case 'msTransitionEnd':
-                case 'oTransitionEnd':
-                case 'transitionend':
+            case 'msTransitionEnd':
+            case 'oTransitionEnd':
+            case 'transitionend':
                 this.transitionEnd(e);
-            break;
+                break;
         }
     },
 
@@ -33,6 +33,29 @@ const Slider = React.createClass({
 
     end() {
         console.log('end');
+    },
+
+    loadImg(n) {
+        n = n || 0;
+    },
+
+    getImg(obj) {
+        if (!obj) {
+            return;
+        }
+
+        if (obj.getAttribute('l')) {
+            return;
+        }
+
+        let img = document.querySelector(obj).querySelector('img.lazy');
+        let src = img.getAttribute('data-img');
+        if (src) {
+            img.setAttribute('src', src).removeAttribute('data-img');
+            img.classList.removeClass('lazy');
+        }
+
+        obj.setAttribute('l', '1');
     },
 
     propTypes: {
@@ -86,7 +109,6 @@ const Slider = React.createClass({
             interval: 5000,  //播放间隔时间，play为true时才有效
             useTransform: this.props.has3d ? true : false, //以translate方式动画，安卓现在也支持了
 
-            lazy: '.lazyimg', //图片延时加载属性
             lazyIndex: 1,  //默认加载到第几屏
             callback: null, //动画结束后触发
 
@@ -100,6 +122,7 @@ const Slider = React.createClass({
     },
 
     componentWillMount() {
+        this.loadImg();
     },
     
     componentDidMount() {
@@ -122,7 +145,7 @@ const Slider = React.createClass({
             return (
                 <li>
                     <a href={res.target}>
-                        <img data-img={res.img} src="http://b0.hucdn.com/img/h5/s.gif" className="lazyimg" alt={index}/>
+                        <img data-img={res.img} src="http://b0.hucdn.com/img/h5/s.gif" className="lazy" alt={index}/>
                     </a>
                 </li>
             )
